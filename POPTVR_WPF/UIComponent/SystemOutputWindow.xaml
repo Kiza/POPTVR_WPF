@@ -1,0 +1,11 @@
+﻿<Window x:Class="POPTVR_WPF.UIComponent.SystemOutputWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="System Output" Height="300" Width="300" Closing="Window_Closing" Icon="..\icons\icon3.ico">
+    <Grid>
+
+        <TextBox Name="textBlock" IsReadOnly="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"></TextBox>
+
+
+    </Grid>
+</Window>

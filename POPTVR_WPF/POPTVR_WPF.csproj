@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2F7C6AC3-CE18-47BA-A846-AA3454586BAE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>POPTVR_WPF</RootNamespace>
+    <AssemblyName>POPTVR_WPF</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons\icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="UIComponent\BatchSimulationWindow.xaml.cs">
+      <DependentUpon>BatchSimulationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="POPTVR\Entities\ClusterSetting.cs" />
+    <Compile Include="POPTVR\Entities\DataSet.cs" />
+    <Compile Include="Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="UIComponent\InteractiveSimulationWindow.xaml.cs">
+      <DependentUpon>InteractiveSimulationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIComponent\SystemOutputWindow.xaml.cs">
+      <DependentUpon>SystemOutputWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="POPTVR\Utilities\AppConfig.cs" />
+    <Compile Include="POPTVR\Utilities\DataFileReader.cs" />
+    <Compile Include="POPTVR\Utilities\FileWriter.cs" />
+    <Compile Include="POPTVR\Utilities\PrintToScreen.cs" />
+    <Compile Include="POPTVR\Utilities\SystemFunctions.cs" />
+    <Compile Include="UIComponent\TrainingProgressWindow.xaml.cs">
+      <DependentUpon>TrainingProgressWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="UIComponent\BatchSimulationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="UIComponent\InteractiveSimulationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIComponent\SystemOutputWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIComponent\TrainingProgressWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="POPTVR\PoptvrArchitecture\BasisNode\ConditionNode.cs" />
+    <Compile Include="POPTVR\PoptvrArchitecture\BasisNode\ConsequenceNode.cs" />
+    <Compile Include="POPTVR\PoptvrArchitecture\BasisNode\InputNode.cs" />
+    <Compile Include="POPTVR\PoptvrArchitecture\BasisNode\OutputNode.cs" />
+    <Compile Include="POPTVR\PoptvrArchitecture\BasisNode\RuleNode.cs" />
+    <Compile Include="POPTVR\PoptvrArchitecture\ClusterModel\ClusterFacadeInterface.cs" />
+    <Compile Include="POPTVR\PoptvrArchitecture\ClusterModel\ClusterInterface.cs" />
+    <Compile Include="POPTVR\PoptvrArchitecture\ClusterModel\MLVQ.cs" />
+    <Compile Include="POPTVR\PoptvrArchitecture\ClusterModel\MlvqFacade.cs" />
+    <Compile Include="POPTVR\PoptvrArchitecture\ClusterModel\RCT.cs" />
+    <Compile Include="POPTVR\PoptvrArchitecture\ClusterModel\RctFacade.cs" />
+    <Compile Include="POPTVR\PoptvrArchitecture\ClusterModel\SOcluster.cs" />
+    <Compile Include="POPTVR\PoptvrArchitecture\ClusterModel\SOclusterFacade.cs" />
+    <Compile Include="POPTVR\PoptvrArchitecture\ClusterModel\SRCT.cs" />
+    <Compile Include="POPTVR\PoptvrArchitecture\ClusterModel\SrctFacade.cs" />
+    <Compile Include="POPTVR\PoptvrArchitecture\PoptvrModel.cs" />
+    <Compile Include="POPTVR\PoptvrArchitecture\PoptvrSystem.cs" />
+    <Compile Include="POPTVR\PoptvrArchitecture\RsPopModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="SplashScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons\icon2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons\icon3.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
